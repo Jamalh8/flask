@@ -23,36 +23,39 @@
 #     db.session.commit()
 #     return first_game.name
 
-from asyncio import tasks
 from application import app, db
 from application.models import Task
 
-@app.route('/add/<task>')
-def add(task):
-    new_task = Task.query.first()
-    new_task.name = task
-    db.session.add()
+@app.route('/add')
+def add():
+    new_task = Task(task_name="New task")
+    db.session.add(new_task)
     db.session.commit()
-    return f"Added {new_task.name} to the database"
+    return "Added this task to your to do list"
 
 @app.route('/read')
 def read():
-    all_task = Task.query.all()
+    all_tasks = Task.query.all()
     task_string = ""
-    for task in all_task:
-        task_string += "<br>"+ task.name
+    for task in all_tasks:
+        task_string += "<br>"+ task.task_name
     return task_string
 
-# @app.route('/update/<task>')
-# def add(task):
-#     new_task = Task.query.first()
-#     new_task.name = task
-#     db.session.commit()
-#     return f"Your task has now been updated to {new_task.name}"
+@app.route('/update/<task_name>')
+def update(task_name):
+    first_task = Task.query.first()
+    first_task.task_name = task_name
+    db.session.commit()
+    return first_task.task_name
 
-# @app.route('/update/<name>')
-# def update(name):
-#     first_game = Games.query.first()
-#     first_game.name = name
-#     db.session.commit()
-#     return first_game.name
+@app.route('/count')
+def count():
+    number_of_tasks = Task.query.count()
+    return str(number_of_tasks)
+
+@app.route('/delete')
+def delete():
+    first_task = Task.query.first()
+    db.session.delete(first_task)
+    db.session.commit()
+    return "You've deleted the first task on database"
