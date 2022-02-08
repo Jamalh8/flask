@@ -10,14 +10,15 @@
 # if __name__ == "__main__":
 #     app.run(debug=True)
 
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+# from flask import Flask
+# from flask_sqlalchemy import SQLAlchemy
+# import os
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:root@localhost:3306/test"
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")
 
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
