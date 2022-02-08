@@ -13,5 +13,10 @@ class Users(db.Model):
     first_name = db.Column(db.String(30), nullable=False)
     last_name = db.Column(db.String(30), nullable=False)
 
+class Games(db.Model):
+    game_id = db.Column(db.Integer, primary_key=True)
+    game_name = db.Column(db.String(30), nullable=False)
+    game_price = db.Column(db.Float, nullable=False)
+
 if __name__=='__main__':
     app.run(debug==True, host='0.0.0.0')
