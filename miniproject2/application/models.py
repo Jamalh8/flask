@@ -6,4 +6,4 @@ class Task(db.Model):
 
 class Task_done(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    task_done = db.Column(db.String(50))
+    task_complete = db.Column(db.String(50))
