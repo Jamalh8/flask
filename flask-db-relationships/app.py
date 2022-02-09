@@ -21,7 +21,7 @@
 # if __name__=='__main__':
 #     app.run(debug==True, host='0.0.0.0')
 
-# Exercise
+# #Exercise
 # class Orders(db.Model):
 #     id = db.Column(db.Integer, primary_key=True)
 #     address = db.Column(db.String(30), nullable=False)

@@ -43,15 +43,9 @@ def read():
 
 @app.route('/update/<task_name>')
 def update(task_name):
-    first_task = Task.query.first()
-    first_task.task_name = task_name
+    db.session.add(task_name)
     db.session.commit()
-    return first_task.task_name
-
-@app.route('/count')
-def count():
-    number_of_tasks = Task.query.count()
-    return str(number_of_tasks)
+    return 'This has been added to your list'
 
 @app.route('/delete')
 def delete():
