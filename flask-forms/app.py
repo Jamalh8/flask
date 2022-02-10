@@ -1,7 +1,5 @@
-from pickle import NONE
 from flask import Flask, render_template, request
 from flask_wtf import FlaskForm
-from pymysql import Date
 from wtforms import StringField, SubmitField, DateField, IntegerField, SelectField
 
 app = Flask(__name__)
