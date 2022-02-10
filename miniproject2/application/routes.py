@@ -12,7 +12,7 @@ def home():
         task_string += "<br>"+ task.task
     for task_complete in task_finished:
         task_finished_string += "<br>"+ task_complete.task_complete
-    return f"<b>These are your remaining tasks:</b> {task_string} \n <b>These are the tasks you've completed:</b> {task_finished_string}"
+    return f"<b>These are your remaining tasks:</b> {task_string} <br><br><b>These are the tasks you've completed:</b> {task_finished_string}"
 
 @app.route('/add')
 def add():
@@ -26,7 +26,7 @@ def update(task):
     task_update = Task.query.first()
     task_update.task = task
     db.session.commit()
-    return task_update.task
+    return f'{task_update.task.upper()} has been updated on your task list'
 
 @app.route('/delete')
 def delete():
