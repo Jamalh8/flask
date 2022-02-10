@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2><b>Insert your task</b></h2>
+        <!-- Must include this to initate form-->
+        <div class='form'>
+            <form method='POST' action=''>
+                <!-- Don't forget hidden tag-->
+                {{ form.hidden_tag() }}
+                <!--Start adding in the labels-->
+                <b>{{ form.title.label }} {{ form.title }}</b>
+                <br>
+                <br>
+                <b>{{ form.task_desc.label }} {{ form.task_desc }}</b>
+                <br>
+                <br>
+                {{ form.submit }}
+                <br>
+                <br>
+            <!-- A short message for user-->
+            {{ message }}
+            </form>
+        </div>
+{% endblock body %}

@@ -7,11 +7,14 @@
                 <!-- Don't forget hidden tag-->
                 {{ form.hidden_tag() }}
                 <!--Start adding in the labels-->
-                {{ form.title.label }} {{ form.title }}
+                <b>{{ form.title.label }} {{ form.title }}</b>
                 <br>
-                {{ form.task_desc.label }} {{ form.task_desc }}
+                <br>
+                <b>{{ form.task_desc.label }} {{ form.task_desc }}</b>
+                <br>
                 <br>
                 {{ form.submit }}
+                <br>
                 <br>
             <!-- A short message for user-->
             {{ message }}
