@@ -1,12 +1,17 @@
 <html>
     <head>
+        <!--Name of webpage-->
         <title>Simple form</title>
     </head>
     <body>
+        <!--Title of webpage-->
         <h2> Information submit page</h2>
+        <!-- Must include this to initate form-->
         <div class='form'>
             <form method='POST' action=''>
+                <!-- Don't forget hidden tag-->
                 {{ form.hidden_tag() }}
+                <!--Start adding in the labels-->
                 {{ form.first_name.label }} {{ form.first_name }}
                 <br>
                 {{ form.last_name.label }} {{ form.last_name }}
@@ -19,6 +24,7 @@
                 <br>
                 {{ form.submit }}
                 <br>
+            <!-- A short message for user-->
             {{ message }}
             </form>
         </div>
