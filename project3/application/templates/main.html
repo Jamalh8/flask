@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Manager</title>
+    </head>
+    <body style="text-align: center">
+        <h2>Task tracker</h2>
+        <button><a href="{{ url_for('create') }}">Create</a> </button>
+        <button><a href="{{ url_for('read') }}">Read</a> </button>
+    {% block todo %}
+    {% endblock todo %}
+    </body>
+</html>
