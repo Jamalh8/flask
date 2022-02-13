@@ -1,14 +1,14 @@
-{% extends "main.html" %}
+{% extends 'main.html' %}
 {% block todo %}
     <h2>All your tasks:</h2>
     <p>
     {% for task in tasks %}
-        Name: {{ task.name}} <br>
+        Name: {{ task.name }} <br>
         Description: {{ task.description }} <br>
         {% if task.complete == True %}
-        Status: <span style="color: green"> Complete </span>
+        Status: <span style="color: rgb(8, 250, 8)"> Complete </span>
         {% else %}
-        Status: <span style="color: red"> Incomplete </span>
+        Status: <span style="color: rgb(253, 2, 2)"> Incomplete </span>
         {% endif %}
         <br>
         <button><a href="{{ url_for('complete', name=task.name) }}">Complete</a> </button>
