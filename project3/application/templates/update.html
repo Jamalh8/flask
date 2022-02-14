@@ -16,13 +16,13 @@
         {{ form.description.label }} {{ form.description }}
         {% if form.description.errors %}
         <div class="error">
-            % for error in form.description.errors %}
+            {% for error in form.description.errors %}
                 <span>{{ error }}</span>
         {% endfor %}
         </div>
         {% endif %}
         <br>
-        {{ form.complete.label }} {{ form.complete }}
+        {{ form.completed.label }} {{ form.completed }}
         <br>
         {{ form.submit }}
     </form>

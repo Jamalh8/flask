@@ -1,10 +1,10 @@
 {% extends 'main.html' %}
 {% block todo %}
-<h3>Task Create</h3>
+<h3>Create a Task:</h3>
 <div class='form'>
     <form method='POST' action=''>
         {{ form.hidden_tag() }}
-        {{ form.name.label }} 
+        {{ form.name.label }}
         {{ form.name }}
         {% if form.name.errors %}
         <div class='error'>
@@ -14,10 +14,10 @@
         </div>
         {% endif %}
         <br>
-        {{ form.description.label }} 
+        {{ form.description.label }}
         {{ form.description }}
         {% if form.description.errors %}
-        <div class="error">
+        <div class='error'>
             {% for error in form.description.errors %}
                 <span>{{ error }}</span>
             {% endfor %}
@@ -27,4 +27,4 @@
         {{ form.submit }}
     </form>
 </div>
-{% endblock todo %} 
+{% endblock todo %}

@@ -3,12 +3,12 @@ from wtforms import StringField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, ValidationError
 
 class CreateForm(FlaskForm):
-    name= StringField('Title of task', validators=[DataRequired(), Length(min=2, max=30)])
-    description = StringField('Description of task', validators=[DataRequired(), Length(min=2,max=100)])
-    submit = SubmitField('Submit')
+    name = StringField('Title', validators=[DataRequired(), Length(min=2,max=30)])
+    description = StringField('Description', validators=[DataRequired(), Length(min=2,max=300)])
+    submit = SubmitField('ToDo')
 
 class UpdateForm(FlaskForm):
-    name= StringField('Title of task', validators=[DataRequired(), Length(min=2, max=100)])
-    description = StringField('Description of task', validators=[DataRequired(), Length(min=2,max=100)])
-    complete = BooleanField('Complete')
+    name = StringField('Title', validators=[DataRequired(), Length(min=2,max=30)])
+    description = StringField('Description', validators=[DataRequired(), Length(min=2,max=300)])
+    completed = BooleanField('Completed')
     submit = SubmitField('Update')
